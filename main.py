@@ -8,10 +8,10 @@ from lifelines.statistics import logrank_test
 
 df = pd.read_csv('survivalInput.txt', sep='\t')
 
-expression_mean = df['expression'].mean()
+expression_median = df['expression'].median()
 append = []
 for i, exp in enumerate(df['expression']):
-    if df.iloc[i]['expression'] > expression_mean:
+    if df.iloc[i]['expression'] > expression_median:
         append.append('high expression')
     else:
         append.append('low expression')
